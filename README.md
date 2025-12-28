@@ -1,4 +1,4 @@
-# web2_projet_final
+# gestionnaire _academique
 
 ## **Université Épiscopale d'Haïti (UNEPH) | Business and Technology Institute (BTI)**  
 ### 8, rue du Quai, HT8110 Les Cayes, Haïti
