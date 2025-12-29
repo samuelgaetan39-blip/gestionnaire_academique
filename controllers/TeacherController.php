@@ -57,10 +57,21 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['action']) && $_POST['a
 
 if (isset($_GET['action']) && $_GET['action'] == 'delete' && isset($_GET['id'])) {
     $teacher->id = $_GET['id'];
-    if ($teacher->delete()) {
-        header("Location: ../views/admin/teachers.php?success=deleted");
-        exit();
+    $teacher_data = $teacher->getById(); 
+    if ($teacher_data) {
+        $user_id_to_delete = $teacher_data['user_id'];
+        if ($teacher->delete()) {
+            $query = "DELETE FROM users WHERE id = :user_id";
+            $stmt = $db->prepare($query);
+            $stmt->bindParam(':user_id', $user_id_to_delete);
+
+            if ($stmt->execute()) {
+                header("Location: ../views/admin/teachers.php?success=deleted");
+                exit();
+            }
+        }
     }
+    
     header("Location: ../views/admin/teachers.php?error=delete_failed");
     exit();
 }
