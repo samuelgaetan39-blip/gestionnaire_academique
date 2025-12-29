@@ -96,7 +96,7 @@ $courses = $course->getAll();
                     <div class="alert alert-success alert-dismissible fade show" role="alert">
                         <?php
                         switch($_GET['success']) {
-                            case 'created': echo 'Inscription créée avec succès !'; break;
+                            case 'created': echo 'Inscription réussie !'; break;
                             case 'deleted': echo 'Inscription supprimée avec succès !'; break;
                         }
                         ?>

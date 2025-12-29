@@ -1,7 +1,7 @@
 <?php
-require_once '../../config/database.php';
-require_once '../../models/Course.php';
-require_once '../../controllers/AuthController.php';
+require_once '../config/database.php';
+require_once '../models/Course.php';
+require_once '../controllers/AuthController.php';
 
 $database = new Database();
 $db = $database->getConnection();
@@ -19,10 +19,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['action']) && $_POST['a
     $course->teacher_id = $_POST['teacher_id'];
     
     if ($course->create()) {
-        header("Location: ../../views/admin/courses.php?success=created");
+        header("Location: ../views/admin/courses.php?success=created");
         exit();
     }
-    header("Location: ../../views/admin/courses.php?error=create_failed");
+    header("Location: ../views/admin/courses.php?error=create_failed");
     exit();
 }
 
@@ -36,10 +36,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['action']) && $_POST['a
     $course->teacher_id = $_POST['teacher_id'];
     
     if ($course->update()) {
-        header("Location: ../../views/admin/courses.php?success=updated");
+        header("Location: ../views/admin/courses.php?success=updated");
         exit();
     }
-    header("Location: ../../views/admin/courses.php?error=update_failed");
+    header("Location: ../views/admin/courses.php?error=update_failed");
     exit();
 }
 
@@ -47,10 +47,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['action']) && $_POST['a
 if (isset($_GET['action']) && $_GET['action'] == 'delete' && isset($_GET['id'])) {
     $course->id = $_GET['id'];
     if ($course->delete()) {
-        header("Location: ../../views/admin/courses.php?success=deleted");
+        header("Location: ../views/admin/courses.php?success=deleted");
         exit();
     }
-    header("Location: ../../views/admin/courses.php?error=delete_failed");
+    header("Location: ../views/admin/courses.php?error=delete_failed");
     exit();
 }
 ?>

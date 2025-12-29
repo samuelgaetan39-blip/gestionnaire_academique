@@ -1,7 +1,7 @@
 <?php
-require_once '../../config/database.php';
-require_once '../../models/Student.php';
-require_once '../../controllers/AuthController.php';
+require_once '../config/database.php';
+require_once '../models/Student.php';
+require_once '../controllers/AuthController.php';
 
 $database = new Database();
 $db = $database->getConnection();
@@ -31,11 +31,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['action']) && $_POST['a
         $student->phone = $_POST['phone'];
         
         if ($student->create()) {
-            header("Location: ../../views/admin/students.php?success=created");
+            header("Location: ../views/admin/students.php?success=created");
             exit();
         }
     }
-    header("Location: ../../views/admin/students.php?error=create_failed");
+    header("Location: ../views/admin/students.php?error=create_failed");
     exit();
 }
 
@@ -51,10 +51,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['action']) && $_POST['a
     $student->phone = $_POST['phone'];
     
     if ($student->update()) {
-        header("Location: ../../views/admin/students.php?success=updated");
+        header("Location: ../views/admin/students.php?success=updated");
         exit();
     }
-    header("Location: ../../views/admin/students.php?error=update_failed");
+    header("Location: ../views/admin/students.php?error=update_failed");
     exit();
 }
 
@@ -62,10 +62,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['action']) && $_POST['a
 if (isset($_GET['action']) && $_GET['action'] == 'delete' && isset($_GET['id'])) {
     $student->id = $_GET['id'];
     if ($student->delete()) {
-        header("Location: ../../views/admin/students.php?success=deleted");
+        header("Location: ../views/admin/students.php?success=deleted");
         exit();
     }
-    header("Location: ../../views/admin/students.php?error=delete_failed");
+    header("Location: ../views/admin/students.php?error=delete_failed");
     exit();
 }
 ?>

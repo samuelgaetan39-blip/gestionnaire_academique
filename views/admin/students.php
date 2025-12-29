@@ -2,6 +2,7 @@
 if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }
+
 require_once '../../config/database.php';
 require_once '../../controllers/AuthController.php';
 require_once '../../models/Student.php';
@@ -27,7 +28,7 @@ if ($search) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gestion des étudiants | Gestionnaire Académique</title>
+    <title>Gestion des étudiant·e·s | Gestionnaire Académique</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
     <link rel="stylesheet" href="../../assets/css/style.css">
@@ -78,7 +79,7 @@ if ($search) {
             <!-- Main Content -->
             <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
                 <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-                    <h1 class="h2 flex-grow-1" style="max-width: 75%;">Gestion des étudiants</h1>
+                    <h1 class="h2 flex-grow-1" style="max-width: 75%;">Gestion des étudiant·e·s</h1>
                     <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addStudentModal">
                         <i class="bi bi-plus-circle me-2"></i>
                         Ajouter un étudiant
@@ -89,9 +90,9 @@ if ($search) {
                     <div class="alert alert-success alert-dismissible fade show" role="alert">
                         <?php
                         switch($_GET['success']) {
-                            case 'created': echo 'Étudiant créé avec succès !'; break;
-                            case 'updated': echo 'Étudiant modifié avec succès !'; break;
-                            case 'deleted': echo 'Étudiant supprimé avec succès !'; break;
+                            case 'created': echo 'Étudiant·e créé·e avec succès !'; break;
+                            case 'updated': echo 'Étudiant·e modifié·e avec succès !'; break;
+                            case 'deleted': echo 'Étudiant·e supprimé·e avec succès !'; break;
                         }
                         ?>
                         <button type="button" class="btn-close" data-bs-dismiss="alert"></button>

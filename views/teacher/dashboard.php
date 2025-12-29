@@ -77,7 +77,7 @@ $selected_course_id = $_GET['course_id'] ?? null;
                                             <h5 class="card-title"><?= htmlspecialchars($c['code']) ?></h5>
                                             <p class="card-text"><?= htmlspecialchars($c['name']) ?></p>
                                             <p class="text-muted small mb-2">
-                                                <i class="bi bi-people me-1"></i><?= $student_count ?> étudiants inscrits
+                                                <i class="bi bi-people me-1"></i><?= $student_count ?> étudiant·e·s inscrit·e·s
                                             </p>
                                             <a href="?course_id=<?= $c['id'] ?>" class="btn btn-sm btn-success w-100">
                                                 Gérer les notes
@@ -162,14 +162,15 @@ $selected_course_id = $_GET['course_id'] ?? null;
                             <label class="form-label">Type d'examen</label>
                             <select class="form-select" name="exam_type" required>
                                 <option value="">Sélectionner le type</option>
-                                <option value="Partiel">Partiel</option>
+                                <option value="Intra">Intra</option>
                                 <option value="Final">Final</option>
-                                <option value="TP">TP</option>
+                                <option value="Reprise">Reprise</option>
                                 <option value="Contrôle continu">Contrôle continu</option>
+                                <option value="Autre">Autre</option>
                             </select>
                         </div>
                         <div class="mb-3">
-                            <label class="form-label">Note (/100)</label>
+                            <label class="form-label">Note (sur 100)</label>
                             <input type="number" class="form-control" name="grade" min="0" max="100" step="0.01" required>
                         </div>
                         <div class="mb-3">

@@ -9,7 +9,7 @@
                 <i class="bi bi-person-circle me-1"></i>
                 <?= $_SESSION['first_name'] . ' ' . $_SESSION['last_name'] ?>
             </span>
-            <a href="../../controllers/logout.php" class="btn btn-outline-danger btn-sm">
+            <a href="/gestionnaire_academique/controllers/logout.php" class="btn btn-outline-danger btn-sm">
                 <i class="bi bi-box-arrow-right me-1"></i>
                 Déconnexion
             </a>

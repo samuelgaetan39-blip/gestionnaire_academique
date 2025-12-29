@@ -1,7 +1,7 @@
 <?php
-require_once '../../config/database.php';
-require_once '../../models/Grade.php';
-require_once '../../controllers/AuthController.php';
+require_once '../config/database.php';
+require_once '../models/Grade.php';
+require_once '../controllers/AuthController.php';
 
 $database = new Database();
 $db = $database->getConnection();
@@ -9,7 +9,7 @@ $auth = new AuthController($db);
 
 
 if (!in_array($auth->getRole(), ['teacher', 'admin'])) {
-    header("Location: ../../index.php");
+    header("Location: ../index.php");
     exit();
 }
 
@@ -24,10 +24,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['action']) && $_POST['a
     
     if ($grade->create()) {
         $redirect = $auth->getRole() == 'admin' ? 'admin' : 'teacher';
-        header("Location: ../../views/$redirect/grades.php?success=created");
+        header("Location: ../views/$redirect/grades.php?success=created");
         exit();
     }
-    header("Location: ../../views/teacher/grades.php?error=create_failed");
+    header("Location: ../views/teacher/grades.php?error=create_failed");
     exit();
 }
 
@@ -40,10 +40,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['action']) && $_POST['a
     
     if ($grade->update()) {
         $redirect = $auth->getRole() == 'admin' ? 'admin' : 'teacher';
-        header("Location: ../../views/$redirect/grades.php?success=updated");
+        header("Location: ../views/$redirect/grades.php?success=updated");
         exit();
     }
-    header("Location: ../../views/teacher/grades.php?error=update_failed");
+    header("Location: ../views/teacher/grades.php?error=update_failed");
     exit();
 }
 
@@ -52,10 +52,10 @@ if (isset($_GET['action']) && $_GET['action'] == 'delete' && isset($_GET['id']))
     $grade->id = $_GET['id'];
     if ($grade->delete()) {
         $redirect = $auth->getRole() == 'admin' ? 'admin' : 'teacher';
-        header("Location: ../../views/$redirect/grades.php?success=deleted");
+        header("Location: ../views/$redirect/grades.php?success=deleted");
         exit();
     }
-    header("Location: ../../views/teacher/grades.php?error=delete_failed");
+    header("Location: ../views/teacher/grades.php?error=delete_failed");
     exit();
 }
 ?>
