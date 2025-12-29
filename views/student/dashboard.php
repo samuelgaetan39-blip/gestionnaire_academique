@@ -56,7 +56,7 @@ $overall_average = count($grades_array) > 0 ? array_sum($grades_array) / count($
 <body>
     <?php include '../../includes/header.php'; ?>
     <div class="container mt-4">
-        <h1 class="mb-4">Mon Espace Étudiant</h1>
+        <h1 class="mb-4">Mon espace étudiant</h1>
 
         <!-- Student Info Card -->
         <div class="card mb-4 bg-primary text-white">
@@ -113,7 +113,7 @@ $overall_average = count($grades_array) > 0 ? array_sum($grades_array) / count($
         <!-- Enrolled Courses -->
         <div class="card mb-4">
             <div class="card-header">
-                <h5 class="mb-0"><i class="bi bi-book me-2"></i>Mes Cours</h5>
+                <h5 class="mb-0"><i class="bi bi-book me-2"></i>Mes cours</h5>
             </div>
             <div class="card-body">
                 <div class="table-responsive">
@@ -149,7 +149,7 @@ $overall_average = count($grades_array) > 0 ? array_sum($grades_array) / count($
         <!-- Recent Grades -->
         <div class="card">
             <div class="card-header">
-                <h5 class="mb-0"><i class="bi bi-award me-2"></i>Notes Récentes</h5>
+                <h5 class="mb-0"><i class="bi bi-award me-2"></i>Notes récentes</h5>
             </div>
             <div class="card-body">
                 <div class="table-responsive">

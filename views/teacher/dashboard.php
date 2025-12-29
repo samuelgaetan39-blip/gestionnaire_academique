@@ -50,6 +50,12 @@ $selected_course_id = $_GET['course_id'] ?? null;
                                 Tableau de bord
                             </a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" href="grades.php">
+                                <i class="bi bi-award me-2"></i>
+                                Gestion des notes
+                            </a>
+                        </li>
                     </ul>
                 </div>
             </nav>
@@ -57,13 +63,13 @@ $selected_course_id = $_GET['course_id'] ?? null;
             <!-- Main Content -->
             <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
                 <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-                    <h1 class="h2">Espace Enseignant</h1>
+                    <h1 class="h2">Espace enseignant</h1>
                 </div>
 
                 <!-- My Courses -->
                 <div class="card mb-4">
                     <div class="card-header">
-                        <h5 class="mb-0"><i class="bi bi-book me-2"></i>Mes Cours</h5>
+                        <h5 class="mb-0"><i class="bi bi-book me-2"></i>Mes cours</h5>
                     </div>
                     <div class="card-body">
                         <div class="row g-3">
